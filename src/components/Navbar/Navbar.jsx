@@ -62,6 +62,9 @@ const Navbar = ({setShowLogin}) => {
         <a href='#footer' onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>contact us</a>
         </ul>
         <div className="navbar-right">
+        <div className="navbar-search-icon">
+          <img src={assets.search_icon} alt="" className='navbar-search-logo' />
+        </div>
         <div className='navbar'>
         <label for="visual-toggle" id="visual-toggle-button" onclick="visualMode()" >
             <svg xmlns="http://www.w3.org/2000/svg" class="svgIcon-toggle sun-svg" viewBox="0 0 24 24"><g fill="#f1bd00"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg>
@@ -71,10 +74,11 @@ const Navbar = ({setShowLogin}) => {
         </label>
       </div>
             <div className="navbar-search-icon">
+
                 <Link to='/cart'><img className='basketlogo' src={assets.basket_icon} alt="" /></Link>
                 <div className={getTotalCartAmount()===0?"":"dot"}></div>
             </div>
-            {!token?<button className='signbutton' onClick={()=>setShowLogin(true)}>sign in</button>
+            {!token?<button className='signbutton' onClick={()=>setShowLogin(true)}>Log in</button>
             :<div className='navbar-profile'>
               <img src={assets.profile_icon} className='white-filter' alt="" />
               <ul className="nav-profile-dropdown">
